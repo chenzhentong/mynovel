@@ -1,0 +1,70 @@
+#main{
+	
+	background-color:#C8EEEB;
+}
+.box{
+	background-color:#FBFBFB;
+}
+.box .title {
+    padding: 0 10px;
+    height: 40px;
+    background: #fbfbfb;
+    line-height: 40px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #c8eeeb;
+}
+.h1title h1 {
+    padding: 10px 0;
+    color: #ed6741;
+    text-align: center;
+    font-size: 30px;
+    font-size: 3rem;
+}
+.chapter_Turnpage_1 a {
+    margin: 0 10px;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+.chapter_Turnpage_1, .readtip {
+    text-align: center;
+}
+a {
+    color: #168C84;
+}
+a, a:hover {
+    text-decoration: none;
+}
+.box .title span {
+    float: right;
+}
+.contentbox {
+    padding: 0 25px 10px;
+    letter-spacing: 0.2rem;
+    font-size: 24px;
+    font-size: 2.4rem;
+    line-height: 150%;
+    word-break: break-all;
+}
+.readtip {
+    padding: 10px 0;
+}
+.chapter_Turnpage_1, .readtip {
+    text-align: center;
+}
+.red {
+    color: #ed6741;
+}
+.chapter_Turnpage {
+    color: #999;
+    text-align: center;
+}
+.chapter_Turnpage a {
+    display: inline-block;
+    margin: 0 5px;
+    width: 100px;
+    height: 36px;
+    background: #07B1A6;
+    color: #fbfbfb;
+    line-height: 36px;
+}

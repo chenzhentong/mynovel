@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/nav.css}" />
+<link rel="stylesheet" th:href="@{/css/footer.css}" />
+<link rel="stylesheet" th:href="@{/css/book.css}" />
+<link rel="stylesheet" th:href="@{/font/css/font-awesome.css}" />
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<title th:text="${novel.title}"></title>
+</head>
+<body>
+	<nav th:include="fragment/nav::nav"></nav>
+	<div class="container">
+		<div class="box">
+			<div class="title">
+				<a th:href="@{/index}"><i class="icon-home"></i> 笔趣阁</a>
+				&gt; <a th:href="@{/book/sort/{novelsort_id}(novelsort_id=${novel.novelsort.id})}" th:text="${novel.novelsort.name}"></a> &gt;<a th:text="${novel.title}" th:href="@{/book/{novel_id}(novel_id=${novel.id})}"></a> <span><a
+					target="_blank" href="http://m.biquw.com/book/6007/" class="red"
+					title="手机阅读《http://m.biquw.com/book/6007/》"><i
+						class="icon-mobile-phone"></i> 手机阅读《http://m.biquw.com/book/6007/》</a>
+				</span>
+			</div>
+			<div class="book_info">
+				<div class=" col-md-2 pic">
+					<img alt="" th:src="@{'/img/book/'+${novel.covers}}" title=""
+						
+						width="140" height="180" /><span class="b"></span>
+				</div>
+				<div class="col-md-10">
+					<div id="info">
+						<h1  th:text="${novel.title}"></h1>
+						<div class="options">
+							<span class="item red"><i class="fa fa-user"></i> <font th:text="${novel.author}"></font></span> <span
+								class="item item"><i class="fa fa-clock-o"></i>
+								<font th:text="${novel.uploaded_time}"></font></span> <a class="item yellow"
+								href=""
+								 title="《"><i
+								class="fa fa-download"></i> TXT下载</a> <a class="item purple"
+								href="javascript:;" onclick="showpop_addcase(6007);"
+								rel="nofollow"><i class="fa fa-thumbs-up"></i> 加入书架</a> <a
+								class="item red" href="javascript:;"
+								onclick="showpop_vote(6007);"><i class="icon-thumbs-up"></i>
+								投票推荐</a> <a class="item green" rel="nofollow" href="#footer"><i
+								class="fa fa-sort-down"></i> 直达底部</a>
+							<div class="cr"></div>
+						</div>
+						<div class="update">
+							最新更新：<a th:href="@{/book/{novel_id}/{no}(novel_id=${novel.id},no=${maxNo})}" title=""><font th:text="${maxNo}"></font><font th:text="${maxTitle}"></font></a>(<font th:text="${novel.updated_time}"></font>)
+						</div>
+						<div class="cr"></div>
+						<h3 class="bookinfo_intro">
+							<strong><font th:text="${novel.title}"></font>简介：</strong><br />
+							<font th:text="${novel.description}"></font><br />
+							<a href="http://www.biquw.com/book/6007/">http://www.biquw.com/book/6007/</a>
+						</h3>
+					</div>
+				</div>
+				<p
+					style="padding: 10px 0 10px 10px; margin-top: 10px; border-top: 1px dashed #e5e5e5;">
+					新书推荐：<a href="/book/98295/">青狐语</a>、<a href="/book/98306/">墨杉</a>、<a
+						href="/book/98219/">重生三国之暴君吕布</a>、<a href="/book/98117/">权定江山</a>、<a
+						href="/book/98211/">都市之至尊战王</a>、<a href="/book/98078/">孤舟一系洛阳边</a>、<a
+						href="/book/98339/">皮将军俏元帅</a>、<a href="/book/98221/">三国之疯狂抽卡系统</a>、<a
+						href="/book/98212/">大明超级富二代</a>、<a href="/book/98092/">帝国争霸</a>、
+				</p>
+				<div class="cr"></div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+
+			<div class="box mt10">
+				<h2 class="title">
+					<b><i class="fa fa-list"></i> <font th:text="${novel.title}"></font>最新章节列表</b>
+				</h2>
+				<div class="book_list">
+					<ul th:each="novelchapter:${novelChapterList}">
+
+
+						<li><a th:href="@{/book/{novel_id}/{no}(novel_id=${novel.id},no=${novelchapter.no})}"><font th:text="${novelchapter.no}"></font><font th:text="${novelchapter.title}"></font></a></li>
+					
+					</ul>
+				</div>
+				<div class="cr"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer" th:include="fragment/footer::footer"></div>
+
+</body>
+</html>

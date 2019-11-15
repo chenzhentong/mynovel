@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<title>书籍管理</title>
+</head>
+<body>
+	<div class="container">
+		<table class="table">
+			<tr>
+				<th>书籍名称</th>
+				<th>作者</th>
+				<th>状态</th>
+				<th>类型</th>
+				<th>字数</th>
+				<th>操作</th>
+			</tr>
+			<tr th:each="novel:${novelList}">
+			    <td th:text="${novel.title}"></td>
+			    <td th:text="${novel.author}"></td>
+			    <td th:text="${novel.state}"></td>
+			    <td th:text="${novel.novelsort.name}"></td>
+			    <td th:text="${novel.words}"></td>
+			    <td><button class="btn btn-danger" >删除</button>
+			    	<a class="btn btn-primary" th:href="@{/admin/chapter/{novel_id}(novel_id=${novel.id})}">浏览</a>
+			    </td>
+			</tr>
+			
+		</table>
+	
+	</div>
+	
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+
+</head>
+<body>
+
+
+
+	<nav th:fragment="nav" class="navbar navbar-default navbar-fixed-top ">
+		<div class="container">
+
+			<div class="navbar-header">
+				<!--100%用 container-fluid -->
+
+				<!--小屏幕导航按钮和logo-->
+				<button class="navbar-toggle nav-mobile-button" data-toggle="collapse"
+					data-target=".navbar-collapse ">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a th:href="@{/index}" class="navbar-brand" style="color: green;">首页</a>
+
+			</div>
+
+
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav " >
+					<li><a th:href="@{/book/all}" title="">书库</a></li>
+					<li th:each="booksort:${novelsortList}">
+						<li><a th:href="@{/book/sort/{novelsort_id}(novelsort_id=${booksort.id})}" title=""><font th:text="${booksort.name}"></font></a></li>
+					
+					</li>
+					
+					
+
+				</ul>
+
+
+
+			</div>
+		</div>
+
+	</nav>
+
+</body>
+</html>

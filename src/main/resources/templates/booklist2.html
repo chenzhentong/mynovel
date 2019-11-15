@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/nav.css}" />
+<link rel="stylesheet" th:href="@{/css/footer.css}" />
+<link rel="stylesheet" th:href="@{/font/css/font-awesome.css}" />
+<link rel="stylesheet" th:href="@{/css/booklist.css}" />
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<title>Novels</title>
+</head>
+<body>
+	<nav th:include="fragment/nav::nav"></nav>
+	<div class="container-fulid" id="main">
+		<div class="container" id="realmain">
+			<div class="col-md-12 box">
+				<div class="col-md-12">
+					<h1 class="title">
+						<b>笔趣阁共有小说8万本，汇聚最优秀的海量小说，无限精彩任您挑选。</b> <span><a href="/xs/"
+							class="red" rel="nofollow">清空条件</a></span>
+					</h1>
+				</div>
+				<div class="col-md-12">
+					<div class="filter">
+						<ul>
+							<li><span>排序：</span><a class="curr"
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-0-0-1.html"
+								rel="nofollow">默认</a><a
+								href="http://www.biquw.com/xs/quanbu-allvisit-0-0-0-0-0-0-1.html"
+								rel="nofollow">总点击</a><a
+								href="http://www.biquw.com/xs/quanbu-monthvisit-0-0-0-0-0-0-1.html"
+								rel="nofollow">月点击</a><a
+								href="http://www.biquw.com/xs/quanbu-weekvisit-0-0-0-0-0-0-1.html"
+								rel="nofollow">周点击</a><a
+								href="http://www.biquw.com/xs/quanbu-dayvisit-0-0-0-0-0-0-1.html"
+								rel="nofollow">日点击</a><a
+								href="http://www.biquw.com/xs/quanbu-allvote-0-0-0-0-0-0-1.html"
+								rel="nofollow">总推荐</a><a
+								href="http://www.biquw.com/xs/quanbu-monthvote-0-0-0-0-0-0-1.html"
+								rel="nofollow">月推荐</a><a
+								href="http://www.biquw.com/xs/quanbu-weekvote-0-0-0-0-0-0-1.html"
+								rel="nofollow">周推荐</a><a
+								href="http://www.biquw.com/xs/quanbu-dayvote-0-0-0-0-0-0-1.html"
+								rel="nofollow">日推荐</a><a
+								href="http://www.biquw.com/xs/quanbu-goodnum-0-0-0-0-0-0-1.html"
+								rel="nofollow">收藏数</a><a
+								href="http://www.biquw.com/xs/quanbu-size-0-0-0-0-0-0-1.html"
+								rel="nofollow">字数</a><a
+								href="http://www.biquw.com/xs/quanbu-postdate-0-0-0-0-0-0-1.html"
+								rel="nofollow">入站时间</a><a
+								href="http://www.biquw.com/xs/quanbu-lastupdate-0-0-0-0-0-0-1.html"
+								rel="nofollow"></a></li>
+							<li><span>字数：</span><a class="curr"
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-0-0-1.html"
+								rel="nofollow">全部</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-1-0-0-0-0-1.html"
+								rel="nofollow">30万以下</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-2-0-0-0-0-1.html"
+								rel="nofollow">30万-50万</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-3-0-0-0-0-1.html"
+								rel="nofollow">50万-100万</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-4-0-0-0-0-1.html"
+								rel="nofollow">100万-200万</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-5-0-0-0-0-1.html"
+								rel="nofollow">200万以上</a></li>
+							<li><span>状态：</span><a class="curr"
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-0-0-1.html"
+								rel="nofollow">不限</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-1-0-1.html">连载中</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-2-0-1.html">已完成</a></li>
+							<li><span>字母：</span><a class="curr"
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-0-0-1.html"
+								rel="nofollow">全部</a><a
+								href="http://www.biquw.com/xs/quanbu-default-a-0-0-0-0-0-1.html"
+								rel="nofollow">A</a><a
+								href="http://www.biquw.com/xs/quanbu-default-b-0-0-0-0-0-1.html"
+								rel="nofollow">B</a><a
+								href="http://www.biquw.com/xs/quanbu-default-c-0-0-0-0-0-1.html"
+								rel="nofollow">C</a><a
+								href="http://www.biquw.com/xs/quanbu-default-d-0-0-0-0-0-1.html"
+								rel="nofollow">D</a><a
+								href="http://www.biquw.com/xs/quanbu-default-e-0-0-0-0-0-1.html"
+								rel="nofollow">E</a><a
+								href="http://www.biquw.com/xs/quanbu-default-f-0-0-0-0-0-1.html"
+								rel="nofollow">F</a><a
+								href="http://www.biquw.com/xs/quanbu-default-g-0-0-0-0-0-1.html"
+								rel="nofollow">G</a><a
+								href="http://www.biquw.com/xs/quanbu-default-h-0-0-0-0-0-1.html"
+								rel="nofollow">H</a><a
+								href="http://www.biquw.com/xs/quanbu-default-i-0-0-0-0-0-1.html"
+								rel="nofollow">I</a><a
+								href="http://www.biquw.com/xs/quanbu-default-j-0-0-0-0-0-1.html"
+								rel="nofollow">J</a><a
+								href="http://www.biquw.com/xs/quanbu-default-k-0-0-0-0-0-1.html"
+								rel="nofollow">K</a><a
+								href="http://www.biquw.com/xs/quanbu-default-l-0-0-0-0-0-1.html"
+								rel="nofollow">L</a><a
+								href="http://www.biquw.com/xs/quanbu-default-m-0-0-0-0-0-1.html"
+								rel="nofollow">M</a><a
+								href="http://www.biquw.com/xs/quanbu-default-n-0-0-0-0-0-1.html"
+								rel="nofollow">N</a><a
+								href="http://www.biquw.com/xs/quanbu-default-o-0-0-0-0-0-1.html"
+								rel="nofollow">O</a><a
+								href="http://www.biquw.com/xs/quanbu-default-p-0-0-0-0-0-1.html"
+								rel="nofollow">P</a><a
+								href="http://www.biquw.com/xs/quanbu-default-r-0-0-0-0-0-1.html"
+								rel="nofollow">R</a><a
+								href="http://www.biquw.com/xs/quanbu-default-s-0-0-0-0-0-1.html"
+								rel="nofollow">S</a><a
+								href="http://www.biquw.com/xs/quanbu-default-t-0-0-0-0-0-1.html"
+								rel="nofollow">T</a><a
+								href="http://www.biquw.com/xs/quanbu-default-q-0-0-0-0-0-1.html"
+								rel="nofollow">Q</a><a
+								href="http://www.biquw.com/xs/quanbu-default-u-0-0-0-0-0-1.html"
+								rel="nofollow">U</a><a
+								href="http://www.biquw.com/xs/quanbu-default-v-0-0-0-0-0-1.html"
+								rel="nofollow">V</a><a
+								href="http://www.biquw.com/xs/quanbu-default-w-0-0-0-0-0-1.html"
+								rel="nofollow">W</a><a
+								href="http://www.biquw.com/xs/quanbu-default-x-0-0-0-0-0-1.html"
+								rel="nofollow">X</a><a
+								href="http://www.biquw.com/xs/quanbu-default-y-0-0-0-0-0-1.html"
+								rel="nofollow">Y</a><a
+								href="http://www.biquw.com/xs/quanbu-default-z-0-0-0-0-0-1.html"
+								rel="nofollow">Z</a></li>
+							<li><span>顺序：</span><a class="curr"
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-0-0-1.html"
+								rel="nofollow">倒序</a><a
+								href="http://www.biquw.com/xs/quanbu-default-0-0-0-0-0-1-1.html"
+								rel="nofollow">正序</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="box mt10">
+						<div class="title">
+							<b>检索到符合条件的小说共有<font th:text="${pages.getTotalElements()}"></font>部
+							</b> <span>当前页显示<font th:text="${pages.getContent().size()}"></font>部小说
+							</span>
+						</div>
+
+						<div class="sitebox">
+							<div th:each="book:${pages.getContent()}">
+									<div class="col-md-6 book">
+
+								<div class="col-md-3">
+
+									<a th:href="@{/book/{novel_id}(novel_id=${book.id})}" target="_blank"><img
+										th:src="@{'/img/book/'+${book.covers}}"
+										 th:alt="${book.covers}"
+										height="155" width="120" /></a>
+								</div>
+
+
+								<div class="col-md-7">
+									<div>
+										<h3>
+											<span class="uptime" th:text="${book.uploaded_time}"></span><a
+												th:href="@{/book/{novel_id}(novel_id=${book.id})}" ><font th:text="${book.title}"></font></a>
+										</h3>
+									</div>
+									<div class="book_other">
+										作者：<span th:text="${book.author}"></span>
+									</div>
+									<div class="book_des">
+										<font th:text="${book.description}"></font>
+									</div>
+									<div class="book_other">
+										最新章节：<a href="/book/3974/2678570.html" >第163章
+											夜会女人</a>
+									</div>
+									<div class="book_other"></div>
+								</div>
+
+
+							</div>
+								
+							
+							</div>
+
+
+						
+
+					</div>
+
+
+
+
+
+					<div id="pages" class="col-md-12">
+						<div class="pagelink" id="pagelink">
+							<div class="pagelink" id="pagelink">
+								<em id="pagestats"><font th:text="${pages.getNumber()}"></font>/<font th:text="${pages.getTotalPages()-1}"></font></em>
+							
+									<font th:if="${pages.getNumber()>0}">
+										<a class="pgroup" th:href="@{/book/sort/{novelsort_id}(page=${pages.getNumber()-1},novelsort_id=${novelsort_id})}"><i
+								class="fa fa-chevron-left"></i></a>
+									
+									</font>
+									
+									
+									<font th:if="${pages.getTotalPages()>0}">
+										<font th:each="i:${#numbers.sequence(0,pages.getTotalPages()-1)}">
+									
+										<a th:href="@{/book/sort/{novelsort_id}(page=${i},novelsort_id=${novelsort_id})}"><font th:text="${i}"></font></a>
+									
+									</font>
+									</font>
+									
+									<font th:if="${pages.getTotalPages()-1>pages.getNumber()}">
+										<a class="pgroup" th:href="@{/book/sort/{novelsort_id}(page=${pages.getNumber()+1},novelsort_id=${novelsort_id})}"><i
+								class="fa fa-chevron-right"></i></a>
+									
+									</font>
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div id="footer" th:include="fragment/footer::footer"></div>
+</body>
+</html>

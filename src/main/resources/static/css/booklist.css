@@ -1,0 +1,178 @@
+#main {
+	background-color: #C8EEEB;
+}
+
+.box {
+	background: #FBFBFB;
+}
+
+.box .title {
+	padding: 0 10px;
+	height: 40px;
+	background: #fbfbfb;
+	line-height: 40px;
+	font-size: 14px;
+	font-size: 1.4rem;
+	border-bottom: 1px solid #c8eeeb;
+}
+
+.red {
+	color: #ed6741;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+.filter {
+	position: relative;
+	background: #fbfbfb;
+}
+
+.filter ul {
+	clear: both;
+	overflow: hidden;
+	height: 100%;
+}
+
+.filter li {
+	clear: both;
+	margin-top: -1px;
+	padding: 10px 15px;
+	height: 24px;
+	border-top: 1px solid #f0f0f0;
+	color: #a1a4a9;
+	line-height: 24px;
+}
+
+.filter li span {
+	float: left;
+	color: #535353;
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+.filter li a.curr, .filter li a.curr:visited, .filter li a:hover {
+	background: #168C84;
+	color: #fbfbfb;
+	text-decoration: none;
+}
+
+.filter li a, .filter li a:visited {
+	float: left;
+	display: block;
+	margin: 0 0 0 5px;
+	padding: 0 5px;
+	height: 24px;
+	line-height: 24px;
+}
+
+.box .title b {
+	color: #168C84;
+	font-weight: 700;
+	font-size: 16px;
+	font-size: 1.6rem;
+	display: inline-block;
+	border-bottom: 1px solid #eb6100;
+}
+
+.box .title span {
+	float: right;
+}
+
+.book_info .pic img, .bk .pic img, .novelslist .content .image img,
+	.sitebox dt img {
+	background: url(loading.gif) no-repeat center;
+}
+
+.bk .pic img, .novelslist .content .image img, .sitebox dt img {
+	border-radius: 5%;
+	-webkit-border-radius: 5%;
+	-moz-border-radius: 5%;
+	box-shadow: -1px 1px 5px 0 #666;
+	-webkit-box-shadow: -1px 1px 5px 0 #666;
+	-moz-box-shadow: -1px 1px 5px 0 #666;
+}
+
+img {
+	vertical-align: top;
+}
+
+.sitebox h3 {
+	height: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.sitebox .book_other {
+	height: 24px;
+}
+
+.sitebox .book_des {
+	font-size: 9pt;
+	height: 90px;
+	line-height: 22px;
+	overflow-y: hidden
+}
+
+.sitebox .book_other {
+	height: 24px;
+}
+
+.sitebox  h3 a {
+	font-size: 1pc;
+	overflow: hidden;
+	line-height: 20px;
+}
+
+.sitebox .uptime {
+	float: right;
+	font-weight: 400;
+	color: #999;
+	font-size: 16px;
+}
+.sitebox a{
+	color:#168C84;
+}
+.book{
+	
+	border:1px solid #F0F0F0;
+}
+.book:hover{
+	background-color:#F0F0F0;
+}
+#pages a, #pages a:hover, #pages a:visited, #pages strong {
+    display: inline-block;
+    margin: 0 2px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #07B1A6;
+    border-radius: 3px;
+    color: #07B1A6;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+}
+em, i {
+    font-style: normal;
+}
+#pages{
+	text-align:center;
+	line-height: 50px;
+}
+#pages input {
+    width: 20px;
+    height: 25px;
+    border: 1px solid #07B1A6;
+    border-radius: 3px;
+}
+body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, iframe, input, ol, p, pre, select, table, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Microsoft Yahei,Arial,Tahoma,Verdana,sans-serif;
+}

@@ -1,0 +1,86 @@
+.box {
+    background: #FBFBFB;
+}
+.box .title {
+    padding: 0 10px;
+    height: 40px;
+    background: #fbfbfb;
+    line-height: 40px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #c8eeeb;
+}
+.red {
+    color: #ed6741;
+}
+a, a:hover {
+    text-decoration: none;
+}
+
+#info .options .red {
+    background: #f26e59;
+}
+#info .options .item {
+    display: inline-block;
+    overflow: hidden;
+    padding: 4px 8px;
+    line-height: 30px;
+    height: 30px;
+    max-width: 110px;
+    background: #07B1A6;
+    color: #fbfbfb;
+    text-decoration: none;
+}
+
+#info .options .item+.item {
+    margin-left: 10px;
+}
+#info .options .yellow {
+    background: #f89537;
+}
+#info .options .purple {
+    background: #adb3f3;
+}
+#info .options .green {
+    background: #green
+}
+#info .options .red {
+    background: #f26e59;
+}
+#info h1 {
+    overflow: hidden;
+    margin-bottom: 5px;
+    height: 24px;
+    font-weight: 700;
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 24px;
+}
+.bookinfo_intro {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #b2b2b2;
+    word-break: break-all;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+.box .title span {
+    float: right;
+}
+.book_list ul li {
+    float: left;
+    overflow: hidden;
+    width: 25%;
+    height: 40px;
+    border-bottom: 1px dotted #e5e5e5;
+    line-height: 40px;
+}
+li {
+    list-style-type: none;
+}
+a {
+    color: #168C84;
+}

@@ -1,0 +1,15 @@
+#footer p{
+	
+	  overflow: hidden;
+    margin: 0 auto;
+    width: 960px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 20px;
+}
+#footer{
+	
+	background-color: #07B1A6
+}

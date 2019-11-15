@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/nav.css}" />
+<link rel="stylesheet" th:href="@{/css/footer.css}" />
+<link rel="stylesheet" th:href="@{/css/index.css}" />
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<title>Index</title>
+</head>
+<body>
+	<nav th:include="fragment/nav::nav"></nav>
+
+	<div class="container-fulid" id="main">
+		<div class="container" id="realmain">
+			<div class="row">
+				<div class="col-md-4" id="side">
+
+					<div class="box">
+						<h2 class="title">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>热门小说</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<span><a href="/xs/0-allvisit-0-0-0-0-0-0-1.html"
+								rel="nofollow"> 更多&gt;&gt;</a></span>
+						</h2>
+						<div class="books section-cols">
+
+							<ul th:each="novel:${novelList1}">
+
+								<li><span class="s1"><a
+										th:href="@{/book/{novel_id}(novel_id=${novel.id})}" title=""
+										th:text="${novel.title}"></a></span><span class="s2"
+									th:text="${novel.author}"></span></li>
+							</ul>
+						</div>
+
+					</div>
+
+
+				</div>
+				<div class="col-md-8">
+
+					<div class="col">
+						<div class="box">
+							<h1 class="title">
+								<b>书友推荐阅读</b><span>请记住本站网址：<a href="http://www.biquw.com"
+									class="red">www.biquw.com</a>，手机阅读请直接访问：<a
+									href="http://m.biquw.com" class="red" target="_blank">m.biquw.com</a>。
+								</span>
+							</h1>
+							<div class="news" th:each="novel:${novelList2}">
+								<div>
+
+
+
+
+
+									<div class="bk col-md-6">
+										<div class="pic col-md-6">
+											<a class="img"
+												th:href="@{/book/{novel_id}(novel_id=${novel.id})}" title="">
+												<img th:src="@{'/img/book/'+${novel.covers}}" alt=""
+												width="120" height="150" />
+											</a>
+										</div>
+										<div class="col-md-6">
+											<h3>
+												<a th:href="@{/book/{novel_id}(novel_id=${novel.id})}"
+													title="" th:text="${novel.title}"></a>
+											</h3>
+											<p class="info">
+												<span>作者:<font th:text="${novel.author}"></font></span> <span
+													class="update">更新：
+													
+												<font th:each="chapter,state:${novel.getNovelChapters()}">
+													<font th:if="${state.last==true}">
+														<span
+										class="s4" th:text="'第'+${chapter.no}+'章 '+${chapter.title}"></span>
+										<a	th:text="'第'+${chapter.no}+'章 '+${chapter.title}" th:href="@{/book/{novel_id}/{no}(novel_id=${novel.id},no=${chapter.no})}"></a>
+													</font>
+												</font>
+												
+										
+											
+													</span>
+											</p>
+											<p class="intro" th:text="${novel.description}"></p>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="box novelslist mt10">
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="box">
+							<h2 class="title">
+								<b>最新入库小说</b><span><a th:href="@{/book/all}">更多</a></span>
+							</h2>
+							<div class="books section-cols">
+								<ul th:each="novel:${latestUploadedNovelList}">
+
+									<li><span class="s1"><a
+											th:href="@{/book/{novel_id}(novel_id=${novel.id})}" title=""
+											th:text="${novel.title}"></a></span><span class="s2"
+										th:text="${novel.author}"></span></li>
+
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-8">
+						<div class="box">
+							<h2 class="title">
+								<b>最新小说</b><span><a th:href="@{/book/all}">更多</a></span>
+							</h2>
+							<div class="news section-cols">
+								<ul th:each="novel:${latestUpdatedNovelList}">
+									<li class="bg"><span class="s1"
+										th:text="${novel.novelsort.name}"></span><span class="s2"><a
+											th:href="@{/book/{novel_id}(novel_id=${novel.id})}" title=""
+											th:text="${novel.title}"></a></span>
+											<span class="s3"><a
+											href="/book/94700/41940539.html" ></a></span>
+											<font th:if="${novel.getNovelChapters().size()>0}">
+												<font th:each="chapter,state:${novel.getNovelChapters()}">
+													<font th:if="${state.last==true}">
+														<span
+										class="s4" th:text="'第'+${chapter.no}+'章 '+${chapter.title}"></span>
+													</font>
+												</font>
+												
+											</font>
+											<span class="s5"
+										th:text="${novel.updated_time}"></span></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="link">
+							<h4>
+								<b>友情链接</b><span></span>
+							</h4>
+							<p>
+								<a href="http://www.zuixs.net/" target="_blank">醉小说阅读网</a> <a
+									href="http://www.168xs.net/" target="_blank">168小说网</a> <a
+									href="http://www.biquw.com/book/615/" target="_blank">无敌天下</a>
+								<a href="http://www.biquw.com/book/546/" target="_blank">最强反派系统</a>
+								<a href="http://www.biquw.com/book/2384/" target="_blank">抗日之特战兵王</a>
+								<a href="http://www.biquw.com/book/332/" target="_blank">永恒之心</a>
+								<a href="http://www.biquw.com/book/2379/" target="_blank">调教大宋</a>
+								<a href="http://www.biquw.com/book/225/" target="_blank">龙纹战神</a>
+								<a href="http://www.biquw.com/book/1782/" target="_blank">武道霸主</a>
+								<a href="http://www.biquw.com/book/2967/" target="_blank">近战狂兵</a>
+								<a href="http://www.biquw.com/bqg/sitemap.php" target="_blank">sitemap</a>
+								<a href="http://www.biquw.com/book/41/" target="_blank">最强装逼打脸系统</a>
+								<a href="http://www.biquw.com/book/615/" target="_blank">无敌天下</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer" th:include="fragment/footer::footer"></div>
+</body>
+</html>

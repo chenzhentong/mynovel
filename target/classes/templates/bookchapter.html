@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/nav.css}" />
+<link rel="stylesheet" th:href="@{/css/footer.css}" />
+<link rel="stylesheet" th:href="@{/css/bookchapter.css}" />
+<link rel="stylesheet" th:href="@{/font/css/font-awesome.css}" />
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<title th:text="${novel.title}"></title>
+</head>
+<body>
+	<nav th:include="fragment/nav::nav"></nav>
+	<div id="main" class="container-fulid">
+		<div class="container">
+			<div class="box" id="content">
+				<div class="title">
+					<a th:href="@{/index}"><i class="icon-home"></i> 笔趣阁</a> &gt; <a th:href="@{/book/sort/{novelsort_id}(novelsort_id=${novel.novelsort.id})}"
+						th:text="${novel.novelsort.name}"></a> &gt; <a th:href="@{/book/{novel_id}(novel_id=${novel.id})}"
+						th:text="${novel.title}"></a> <span><script
+							type="text/javascript" src="/static/js/pagetop.js"></script><select
+						name="bcolor" id="bcolor"
+						onchange="javascript:saveSet(),document.getElementById('content').style.backgroundColor=this.options[this.selectedIndex].value;document.getElementById('h1').style.backgroundColor=this.options[this.selectedIndex].value;document.getElementById('yueduye').style.backgroundColor=this.options[this.selectedIndex].value;document.getElementById('readerListADbox').style.backgroundColor=this.options[this.selectedIndex].value;document.getElementById('readerFooterNav').style.backgroundColor=this.options[this.selectedIndex].value;document.getElementById('readerListADboxs').style.backgroundColor=this.options[this.selectedIndex].value;document.getElementById('readerFooterPage').style.backgroundColor=this.options[this.selectedIndex].value;">
+							<option style="" value="">底色</option>
+							<option style="background-color: #f8f8f8" value="#f8f8f8">默认</option>
+							<option style="background-color: #ffffff" value="#ffffff">白色</option>
+							<option style="background-color: #e3e8f7" value="#e3e8f7">淡蓝</option>
+							<option style="background-color: #daebfc" value="#daebfc">蓝色</option>
+							<option style="background-color: #ebeaea" value="#ebeaea">淡灰</option>
+							<option style="background-color: #e7e3e6" value="#e7e3e6">灰色</option>
+							<option style="background-color: #dedcd8" value="#dedcd8">深灰</option>
+							<option style="background-color: #d8d7d7" value="#d8d7d7">暗灰</option>
+							<option style="background-color: #e6fae4" value="#e6fae4">绿色</option>
+							<option style="background-color: #f9fbdd" value="#f9fbdd">明黄</option>
+					</select> <select name="txtcolor" id="txtcolor"
+						onchange="javascript:saveSet(),document.getElementById('htmlContent').style.color=this.options[this.selectedIndex].value;">
+							<option value="">字色</option>
+							<option value="#000000">黑色</option>
+							<option value="#ff0000">红色</option>
+							<option value="#006600">绿色</option>
+							<option value="#0000ff">蓝色</option>
+							<option value="#660000">棕色</option>
+					</select> <select name="fonttype" id="fonttype"
+						onchange="javascript:saveSet(),document.getElementById('htmlContent').style.fontSize=this.options[this.selectedIndex].value;">
+							<option value="24px">字号</option>
+							<option value="20px">小号</option>
+							<option value="22px">较小</option>
+							<option value="24px">中号</option>
+							<option value="26px">较大</option>
+							<option value="28px">大号</option>
+					</select> <select name="scrollspeed" id="scrollspeed"
+						onchange="javascript:saveSet(),setSpeed(this.value)">
+							<option value="5">滚屏</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+					</select> </span>
+				</div>
+				<div class="nc_l" id="jsnc_l">
+					<div class="wrapper_main">
+						<div class="h1title">
+							<h1>
+								<font th:text="${novelChapter.no}"></font><font
+									th:text="${novelChapter.title}"></font>
+							</h1>
+						</div>
+
+						<div class="chapter_Turnpage_1">
+							<a href="javascript:;" rel="nofollow"
+								onclick="showpop_addmark(6007,3995243);"><i
+								class="fa fa-bookmark"></i> 加入书签</a> 
+								
+								<font th:if="${novelChapter.no>minNo}">
+									<a th:href="@{/book/{novel_id}/{no}(novel_id=${novel.id},no=${novelChapter.no-1})}"
+								class="pre pager_prev"><i class="fa fa-chevron-left"></i>
+								上一页</a>
+								</font>
+								
+								 <a th:href="@{/book/{novel_id}(novel_id=${novel.id})}"
+								class="back pager_current"><i class="fa fa-list"></i> 目 录</a>
+								
+								
+								 <font th:if="${maxNo>novelChapter.no}">
+									<a th:href="@{/book/{novel_id}/{no}(novel_id=${novel.id},no=${novelChapter.no+1})}"
+								class="pre pager_prev"><i class="fa fa-chevron-right"></i>
+								下一页</a>
+								</font> <a href="javascript:;"
+								rel="nofollow" onclick="showpop_vote(6007);"><i
+								class="fa fa-thumbs-up"></i> 投票推荐</a>
+						</div>
+						<p
+							style="padding: 10px 0 10px 10px; margin-top: 10px; border-top: 1px dashed #e5e5e5;">
+							新书推荐：<a href="/book/99013/">大宋驸马的幸福生活</a>、<a href="/book/98908/">三国大名士</a>、<a
+								href="/book/98961/">侯门娇娥农门妻</a>、<a href="/book/98907/">三国之死灵召唤师</a>、<a
+								href="/book/98963/">极品妖孽魔少</a>、<a href="/book/98912/">三国双绝</a>、<a
+								href="/book/98949/">乱世妖孽</a>、<a href="/book/98917/">谪世医妃</a>、<a
+								href="/book/98960/">大明最强权臣</a>、<a href="/book/98905/">炮龙烹凤</a>、
+						</p>
+						<div class="ad00">
+							<div class="ad01">
+								<script type="text/javascript">
+									read_ad1();
+								</script>
+								<script src=""></script>
+							</div>
+							<div class="ad02">
+								<script type="text/javascript">
+									read_ad2();
+								</script>
+								<script src=""></script>
+							</div>
+							<div class="ad03">
+								<script type="text/javascript">
+									read_ad3();
+								</script>
+								<script src=""></script>
+							</div>
+						</div>
+						<div id="htmlContent" class="contentbox clear"
+							style="font-size: 22px;" th:utext="${novelChapter.content}">
+
+						</div>
+
+						<div class="col-md-12">
+							<p class="readtip red">
+								<i class="icon-link"></i>
+								本文网址：http://www.biquw.com/book/6007/3995243.html，手机用户请浏览：http://m.biquw.com/book/6007/3995243.html
+								享受更优质的阅读体验。
+							</p>
+
+						</div>
+
+						<div class="chapter_Turnpage">
+							<font th:if="${novelChapter.no>minNo}">
+									<a th:href="@{/book/{novel_id}/{no}(novel_id=${novel.id},no=${novelChapter.no-1})}" class="pre pager_prev"><i
+								class="fa fa-chevron-left"></i> 上一页</a></font> <a href="javascript:;"
+								rel="nofollow" onclick="showpop_addmark(6007,3995243);"><i
+								class="fa fa-bookmark"></i> 加入书签</a> 
+								<a
+								th:href="@{/book/{novel_id}(novel_id=${novel.id})}"><i class="fa fa-list"></i>
+								目录</a>
+								 <a href="javascript:;" rel="nofollow"
+								onclick="showpop_vote(6007);"><i class="fa fa-thumbs-up"></i>
+								投票推荐</a>  <font th:if="${maxNo>novelChapter.no}">
+									<a th:href="@{/book/{novel_id}/{no}(novel_id=${novel.id},no=${novelChapter.no+1})}" class="next pager_next"><i
+								class="fa fa-chevron-right"></i> 下一页</a></font>
+						</div>
+						<p class="readtip">
+							温馨提示：按 回车[Enter]键 返回书目，按 ←键 返回上一页， 按 →键 进入下一页，加入书签方便您下次继续阅读。<a
+								class="red" rel="nofollow"
+								style="margin-left: 10px; display: inline; height: auto; line-height: 14px;">章节错误？点此举报</a>
+						</p>
+
+						<p
+							style="padding: 10px 0 10px 10px; margin-top: 10px; border-top: 1px dashed #e5e5e5;">
+							热门小说：<a href="/book/3593/">权路通途</a>、<a href="/book/25678/">至尊瞳术师：绝世大小姐</a>、<a
+								href="/book/6508/">官神</a>、<a href="/book/9375/">丛林战神</a>、<a
+								href="/book/7895/">嫂子的诱惑</a>、<a href="/book/13842/">黑道公主玩转校园</a>、<a
+								href="/book/80241/">最强兵王</a>、<a href="/book/5496/">御前侍卫</a>、<a
+								href="/book/22888/">斗罗大陆之唐门黄金一代</a>、<a href="/book/6061/">凤惊天下：金牌杀手妃</a>、
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<div id="footer" th:include="fragment/footer::footer"></div>
+
+</body>
+</html>
